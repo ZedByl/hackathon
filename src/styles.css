@@ -17,7 +17,7 @@ body {
 .menu {
     position: fixed;
     z-index: 1000;
-    width: 150px;
+    width: 250px;
     background: #1b1a1a;
     border-radius: 5px;
     display: none;
@@ -41,6 +41,15 @@ body {
     background: #343434;
 }
 
-.message {
-    margin-right: 15px;
+.toast {
+    position: absolute;
+}
+
+.youtube {
+    width: 1200px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

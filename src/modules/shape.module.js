@@ -5,7 +5,7 @@ export default class ShapeModule extends Module {
     super(type, text);
   }
 
-  static trigger() {
-    console.log('voice')
+  trigger() {
+
   }
 }

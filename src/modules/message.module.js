@@ -6,7 +6,7 @@ export default class MessageModule extends Module {
     super(type, text);
   }
 
-  static trigger() {
+  trigger() {
     const toast = document.querySelector('#toast')
     toast.innerHTML = messageWindow
     const message = document.querySelector('.toast') || null
