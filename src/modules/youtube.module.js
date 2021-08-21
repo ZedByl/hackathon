@@ -8,8 +8,6 @@ export default class YoutubeModule extends Module {
     this.#youtube = document.querySelector('.youtube')
   }
 
-
-
   trigger() {
     this.#youtube.innerHTML = youtubeModal
     const closeModal = document.querySelector('.btn-close')

@@ -17,6 +17,7 @@ for (let item in arr) {
   ContextMenu.add(menu.menu, arr[item].toHTML())
 }
 
+
 document.querySelector('#menu').addEventListener('click', (e) => {
   const { target } = e
   if (target.id) {
