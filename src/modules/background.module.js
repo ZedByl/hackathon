@@ -3,7 +3,6 @@ import { Module } from '../core/module';
 export default class BackgroundModule extends Module {
     #gradient
     #step
-    #color
     #background
     #canvas
     #ctx
@@ -30,15 +29,6 @@ export default class BackgroundModule extends Module {
         this.#background = [left, right];
 
         this.#gradient = "linear-gradient(" + angle + "deg, " + left + ", " + right + ")";
-    }
-
-    #getUrl = async () => {
-        try{
-            const {url} = await fetch('https://source.unsplash.com/random/1600x900');
-            return await url;
-        } catch(e){
-            console.log(e);
-        }
     }
 
     #drawCircles = () => {
