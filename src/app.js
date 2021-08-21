@@ -10,9 +10,7 @@ const background = new Modules.BackgroundModule('background', 'Поменять 
 const arr = {voice, message, youtube, background}
 
 const menu = new ContextMenu()
-
 ContextMenu.open(menu.menu)
-
 ContextMenu.close(menu.menu)
 
 for (let item in arr) {

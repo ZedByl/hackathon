@@ -11,7 +11,6 @@ export default class YoutubeModule extends Module {
 
 
   trigger() {
-
     this.#youtube.innerHTML = youtubeModal
     const closeModal = document.querySelector('.btn-close')
     const message = document.querySelector('.modal-content')
