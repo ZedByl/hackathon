@@ -7,7 +7,8 @@ import * as Modules from './modules/'
 const message = new Modules.MessageModule('message', 'Важное сообщение')
 const voice = new Modules.ShapeModule('voice', 'Важное звук')
 const youtube = new Modules.YoutubeModal('youtube', 'Уроки по Java Script')
-const arr = [voice, message, youtube]
+const background = new Modules.BackgroundModule('background', 'Поменять цвет')
+const arr = [voice, message, youtube, background]
 
 const menu = new ContextMenu()
 
@@ -28,6 +29,8 @@ document.querySelector('#menu').addEventListener('click', (e) => {
       Modules.YoutubeModal.trigger()
     } else if ('voice' === target.id) {
       Modules.ShapeModule.trigger()
+    } else if ('background' === target.id){
+      background.trigger();
     } else {
       alert('Функционал еще не добавлен')
     }
