@@ -1,14 +1,12 @@
 import { Module } from '../core/module';
 
 export default class BackgroundModule extends Module {
-    #gradient
     #step
     #background
     #canvas
     #ctx
     constructor(type, text){
         super(type, text);
-        this.#gradient;
         this.#step;
         this.#background;
 
@@ -16,7 +14,6 @@ export default class BackgroundModule extends Module {
         this.#canvas.id = 'canvas';
         this.#canvas.style.height = '100%';
         this.#canvas.style.width = '100%';
-        document.body.append(this.#canvas);
         this.#ctx = this.#canvas.getContext("2d");
     }
 
@@ -28,7 +25,7 @@ export default class BackgroundModule extends Module {
             angle = Math.round( Math.random() * 360 );
         this.#background = [left, right];
 
-        this.#gradient = "linear-gradient(" + angle + "deg, " + left + ", " + right + ")";
+        document.body.style.background = "linear-gradient(" + angle + "deg, " + left + ", " + right + ")";
     }
 
     #drawCircles = () => {
@@ -80,6 +77,14 @@ export default class BackgroundModule extends Module {
     trigger = () => {
         this.#getRandomGradientColor();
         this.#circlesBackground();
-        document.body.style.background = this.#gradient;
-    }    
+        document.body.append(this.#canvas);
+
+        document.body.addEventListener('click', (e) => {
+            const {target} = e;
+            if(target.id == 'canvas'){
+                this.#canvas.remove();
+                document.body.style = '';
+            }
+        })
+    }
 }
