@@ -40,3 +40,7 @@ body {
 .menu .menu-item:hover {
     background: #343434;
 }
+
+.message {
+    margin-right: 15px;
+}

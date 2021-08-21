@@ -1,11 +1,11 @@
 import {Module} from '../core/module'
 
-export default class ShapeModule extends Module {
+export default class YoutubeModule extends Module {
   constructor(type, text) {
     super(type, text);
   }
 
   static trigger() {
-    console.log('voice')
+    console.log('you')
   }
 }
