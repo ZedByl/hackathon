@@ -88,22 +88,8 @@ export default class BackgroundModule extends Module {
     }
 
     trigger = () => {
-        const menu = document.querySelector('#menu');
-        menu.innerHTML = super.toHTML();
         this.#getRandomGradientColor();
-
         this.#circlesBackground();
         document.body.style.background = this.#gradient;
-
-        // menu.addEventListener('click', async (e) => {
-        //     console.log('click')
-        //     // const url = await this.#getUrl();
-        //     // change to img
-        //     // document.body.style.backgroundImage = `url(${url})`;
-        //     // document.body.style.backgroundSize = 'cover';
-        //     // document.body.style.backgroundRepeat = 'no-repeat';
-        //     //change to spirogram
-        //     //change to gradient
-        // })
     }    
 }
