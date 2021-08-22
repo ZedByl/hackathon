@@ -8,11 +8,10 @@ const voice = new Modules.ShapeModule("voice", "Важное звук");
 const youtube = new Modules.YoutubeModal("youtube", "Уроки по Java Script");
 const background = new Modules.BackgroundModule("background", "Поменять цвет");
 const countDown = new Modules.CountDownModule("countDown", "Обратный отсчет");
-const clicksCounter = new Modules.ClicksModule(
-  "clicksCounter",
-  "Аналитика кликов (3 сек)"
-);
-const arr = { voice, message, youtube, background, countDown, clicksCounter };
+const clicksCounter = new Modules.ClicksModule("clicksCounter", "Аналитика кликов (3 сек)");
+const sound = new Modules.AudioModule("sound", "Случайный звук");
+const arr = { voice, message, youtube, background, countDown, sound, clicksCounter };
+
 
 const menu = new ContextMenu();
 ContextMenu.open(menu.menu);

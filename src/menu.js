@@ -19,11 +19,9 @@ export class ContextMenu extends Menu {
       if (event.button !== 2) {
         menu.classList.remove('open')
       }
-      menu.addEventListener('click', event => {
-        event.stopPropagation()
-      }, false)
     })
   }
+
 
   static add(menu, instanceofModule) {
     menu.append(instanceofModule)

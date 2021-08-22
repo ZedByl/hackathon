@@ -188,18 +188,6 @@ body {
   left: 0;
 }
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 45px rgb(0, 0, 0), 0 0 55px #fff, 0 0 65px rgb(0, 42, 77),
-      0 0 75px rgb(0, 42, 77), 0 0 85px rgb(0, 42, 77), 0 0 95px rgb(0, 42, 77),
-      0 0 105px rgb(0, 42, 77);
-  }
-  to {
-    text-shadow: 0 0 45px rgb(0, 0, 0), 0 0 55px #000000, 0 0 65px #000000,
-      0 0 75px #000000, 0 0 85px #000000, 0 0 95px #000000, 0 0 105px #000000;
-  }
-}
-
 .clicks-container {
   border-radius: 12px;
   height: 100%;
@@ -223,3 +211,17 @@ h1 {
 .clicks-container p {
   font-size: 20px;
 }
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 45px rgb(0, 0, 0), 0 0 55px #fff, 0 0 65px rgb(0, 42, 77),
+      0 0 75px rgb(0, 42, 77), 0 0 85px rgb(0, 42, 77), 0 0 95px rgb(0, 42, 77),
+      0 0 105px rgb(0, 42, 77);
+  }
+  to {
+    text-shadow: 0 0 45px rgb(0, 0, 0), 0 0 55px #000000, 0 0 65px #000000,
+      0 0 75px #000000, 0 0 85px #000000, 0 0 95px #000000, 0 0 105px #000000;
+  }
+}
+
+
