@@ -9,8 +9,9 @@ const background = new Modules.BackgroundModule("background", "Поменять 
 const countDown = new Modules.CountDownModule("countDown", "Обратный отсчет");
 const sound = new Modules.AudioModule("sound", "Случайный звук");
 const clicksCounter = new Modules.ClicksModule("clicksCounter", "Аналитика кликов (3 сек)");
+const shape = new Modules.ShapeModule("shape", "Случайная фигура");
 
-const arr = { message, youtube, background, countDown, sound, clicksCounter }
+const arr = { message, youtube, background, countDown, sound, clicksCounter, shape}
 
 const menu = new ContextMenu()
 ContextMenu.open(menu.menu)
