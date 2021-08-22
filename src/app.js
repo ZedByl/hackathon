@@ -4,12 +4,12 @@ import { ContextMenu } from "./menu";
 import * as Modules from "./modules/";
 
 const message = new Modules.MessageModule("message", "Важное сообщение");
-const voice = new Modules.ShapeModule("voice", "Важное звук");
+const shape = new Modules.ShapeModule("shape", "Случайная фигура");
 const youtube = new Modules.YoutubeModal("youtube", "Уроки по Java Script");
 const background = new Modules.BackgroundModule("background", "Поменять цвет");
 const countDown = new Modules.CountDownModule("countDown", "Обратный отсчет");
 const sound = new Modules.AudioModule("sound", "Случайный звук");
-const arr = { voice, message, youtube, background, countDown, sound };
+const arr = { message, youtube, background, countDown, sound, shape };
 
 const menu = new ContextMenu();
 ContextMenu.open(menu.menu);
