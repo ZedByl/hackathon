@@ -62,6 +62,15 @@ module.exports = (env, argv) => {
               presets: ['@babel/preset-env']
             }
           }
+        },
+        {
+          test: /\.(png|jpg)$/,
+          include: path.join(__dirname, 'assets/'),
+          loader: 'file-loader'
+        },
+        {
+          test: /\.(ttf|woff|woff2|eot)$/,
+          use: ['file-loader'],
         }
       ],
     }

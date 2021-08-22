@@ -17,8 +17,8 @@ export const youtubeModal = `
       </div>
       <div class="modal-body">
         <iframe 
-            width="1165"
-            height="515" 
+            width="100%"
+            height="700" 
             src="https://www.youtube.com/embed/videoseries?list=PLqKQF2ojwm3llpxoP1rzoz7TE2Fpo4Zhp" 
             title="YouTube video player" 
             frameborder="0" 
