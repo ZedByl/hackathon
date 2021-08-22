@@ -4,28 +4,46 @@ export default class CountDownModule extends Module {
   #container;
   #time;
   #timerHTML;
+  #countContainer;
 
   constructor(type, text) {
     super(type, text);
   }
 
   trigger() {
-    this.#container = document.querySelector("body");
-    const form = this.#render();
-    this.#container.append(form);
+    if (
+      !document.querySelector(".count__down-container") &&
+      !document.querySelector(".timer__html")
+    ) {
+      this.#container = document.querySelector("body");
+      const form = this.#render();
+      this.#container.append(form);
+    } else {
+      console.error("Блок обратного осчета уже вызван");
+    }
+
+    document.body.addEventListener("click", (event) => {
+      const { target } = event;
+      if (target.className == "count__down-container") {
+        this.#countContainer.remove();
+      } else if (target.className == "timer__html") {
+        this.#timerHTML.remove();
+        clearInterval(this.countInterval);
+      }
+    });
   }
 
   #render() {
-    const countContainer = document.createElement("div");
-    countContainer.className = "count__down-container";
+    this.#countContainer = document.createElement("div");
+    this.#countContainer.className = "count__down-container";
 
     const inputForm = document.createElement("form");
     inputForm.className = "count__down-form";
-    countContainer.append(inputForm);
+    this.#countContainer.append(inputForm);
 
     inputForm.addEventListener("submit", (event) => {
       event.preventDefault();
-      countContainer.remove();
+      this.#countContainer.remove();
       const { target } = event;
       this.#time = input.value;
       this.#timerHTML = document.createElement("div");
@@ -70,7 +88,7 @@ export default class CountDownModule extends Module {
     label.textContent = "Кол-во секунд:";
     inputContainer.append(input, shortInputName, label);
 
-    return countContainer;
+    return this.#countContainer;
   }
 
   #countDownStart() {
