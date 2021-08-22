@@ -188,6 +188,30 @@ body {
   left: 0;
 }
 
+.clicks-container {
+  border-radius: 12px;
+  height: 100%;
+  width: 100%;
+  background-color: #ffdab9;
+}
+
+.clicks-button {
+  align-self: center;
+  height: 60px;
+  margin: 25px;
+}
+
+.clicks-container p,
+h1 {
+  align-self: center;
+  display: block;
+  font-weight: bold;
+}
+
+.clicks-container p {
+  font-size: 20px;
+}
+
 @keyframes glow {
   from {
     text-shadow: 0 0 45px rgb(0, 0, 0), 0 0 55px #fff, 0 0 65px rgb(0, 42, 77),
@@ -199,3 +223,5 @@ body {
       0 0 75px #000000, 0 0 85px #000000, 0 0 95px #000000, 0 0 105px #000000;
   }
 }
+
+
