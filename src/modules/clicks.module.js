@@ -54,5 +54,5 @@ export class ClicksModule extends Module {
   }
 }
 
-let click = new ClicksModule("click", "click");
-click.trigger();
+// let click = new ClicksModule("click", "click");
+// click.trigger();
