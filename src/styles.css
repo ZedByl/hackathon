@@ -1,42 +1,225 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-size: 14px;
-    font-family: 'Roboto', sans-serif;
-    height: 100vh;
-    width: 100%;
-    padding: 2rem;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  width: 100%;
+  padding: 2rem;
 }
 
 .menu {
-    position: fixed;
-    z-index: 1000;
-    width: 150px;
-    background: #1b1a1a;
-    border-radius: 5px;
-    display: none;
-    list-style: none;
+  position: fixed;
+  z-index: 1000;
+  width: 250px;
+  background: #1b1a1a;
+  border-radius: 5px;
+  display: none;
+  list-style: none;
 }
 
 .menu.open {
-    display: block;
+  display: block;
 }
 
 .menu .menu-item {
-    padding: 8px 10px;
-    font-size: 1rem;
-    color: #eee;
-    cursor: pointer;
-    transition: background-color .2s ease-in;
-    border-radius: inherit;
+  padding: 8px 10px;
+  font-size: 1rem;
+  color: #eee;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+  border-radius: inherit;
 }
 
 .menu .menu-item:hover {
-    background: #343434;
+  background: #343434;
+}
+
+.toast {
+  position: absolute;
+}
+
+.youtube {
+  width: 1200px;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.count__down-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.count__down-form {
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 20px;
+  width: 320px;
+}
+
+.count__down-title {
+  color: #eee;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.count__down-input--container {
+  height: 50px;
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.count__down-input {
+  background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+}
+
+.count__down-short {
+  background-color: #15172b;
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 76px;
+}
+
+.short-short {
+  width: 50px;
+}
+
+.count__down-input:focus ~ .short,
+.count__down-input:not(:placeholder-shown) ~ .short {
+  transform: translateY(8px);
+}
+
+.count__down-placeholder {
+  color: #65657b;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 20px;
+}
+
+.input:focus ~ .cut,
+.input:not(:placeholder-shown) ~ .cut {
+  transform: translateY(8px);
+}
+
+.count__down-input:focus ~ .count__down-placeholder,
+.count__down-input:not(:placeholder-shown) ~ .count__down-placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.count__down-input:not(:placeholder-shown) ~ .count__down-placeholder {
+  color: #808097;
+}
+
+.count__down-input:focus ~ .count__down-placeholder {
+  color: #dc2f55;
+}
+
+.count__down-btn {
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  outline: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.count__down-btn:active {
+  background-color: #06b;
+}
+
+.timer__html {
+  font-size: 170px;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 45px rgb(0, 0, 0), 0 0 55px #fff, 0 0 65px rgb(0, 42, 77),
+      0 0 75px rgb(0, 42, 77), 0 0 85px rgb(0, 42, 77), 0 0 95px rgb(0, 42, 77),
+      0 0 105px rgb(0, 42, 77);
+  }
+  to {
+    text-shadow: 0 0 45px rgb(0, 0, 0), 0 0 55px #000000, 0 0 65px #000000,
+      0 0 75px #000000, 0 0 85px #000000, 0 0 95px #000000, 0 0 105px #000000;
+  }
+}
+
+.clicks-container {
+  border-radius: 12px;
+  height: 100%;
+  width: 100%;
+  background-color: #ffdab9;
+}
+
+.clicks-button {
+  align-self: center;
+  height: 60px;
+  margin: 25px;
+}
+
+.clicks-container p,
+h1 {
+  align-self: center;
+  display: block;
+  font-weight: bold;
+}
+
+.clicks-container p {
+  font-size: 20px;
 }

@@ -1,58 +1,64 @@
 import { Module } from "../core/module";
-import "bootstrap/dist/css/bootstrap.css";
 
-export class ClicksModule extends Module {
+export default class ClicksModule extends Module {
   constructor(type, text) {
     super(type, text);
   }
 
   trigger() {
-    let button = document.querySelector("button");
+    const clicksContainer = document.createElement("div");
+    clicksContainer.className = "clicks-container text-center";
+    document.body.append(clicksContainer);
+    const startButton = document.createElement("button");
+    startButton.innerText = "Нажмите для старта";
+    startButton.className = "clicks-button btn btn-dark ";
+    clicksContainer.append(startButton);
 
     let counter = 0;
 
-    let getCount = function () {
+    const getCount = function () {
       counter++;
     };
 
-    button.addEventListener("click", (event) => {
+    startButton.addEventListener("click", (event) => {
       event.stopPropagation();
+      startButton.remove();
 
-      let helperElement = document.createElement("p");
-      helperElement.className = "text-center text-danger";
-      document.body.append(helperElement);
+      const helperElement = document.createElement("p");
+      helperElement.className = "text-info";
+      clicksContainer.append(helperElement);
       helperElement.innerText = "Секунда на подготовку!";
 
-      let timerElement = document.createElement("p");
-      timerElement.className = "text-center text-primary";
-      document.body.append(timerElement);
+      const timerElement = document.createElement("p");
+      timerElement.className = " text-primary";
+      clicksContainer.append(timerElement);
 
-      let result = document.createElement("h1");
-      result.className = "text-center text-success";
-      document.body.append(result);
+      const result = document.createElement("h1");
+      result.className = " text-success";
+      clicksContainer.append(result);
       let timer = 4;
 
-      let timerId = setInterval(() => {
+      const timerId = setInterval(() => {
         if (timer === 1) {
           timerElement.remove();
-          result.innerHTML = `Итого кликов: ${counter}<br> <h6 class="text-center text-muted">Нажмите, чтобы удалить</h6>`;
+          result.innerHTML = `Итого кликов: ${counter}<br> <h6 class="text-center text-muted">Нажмите на текст, чтобы удалить</h6>`;
           result.addEventListener("click", () => {
             result.remove();
+            clicksContainer.className = "hiden";
           });
           counter = 0;
-          document.removeEventListener("click", getCount);
+          clicksContainer.removeEventListener("click", getCount);
           clearInterval(timerId);
         } else {
           timer--;
         }
+
         helperElement.remove();
+
         timerElement.innerText = `Кликайте! Осталось секунд: ${timer}`;
       }, 1000);
 
-      document.addEventListener("click", getCount);
+      clicksContainer.addEventListener("click", getCount);
     });
   }
 }
-
-// let click = new ClicksModule("click", "click");
-// click.trigger();
